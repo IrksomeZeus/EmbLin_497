@@ -8,6 +8,7 @@ import curses
 myscreen = curses.initscr()
 curses.noecho()
 curses.cbreak()
+curses.curs_set(0)
 
 x_grid = 8
 y_grid = 8
@@ -44,8 +45,8 @@ def reset_board():
     myscreen.clear()
 
     myscreen.border(0)
-    myscreen.addstr(0, 0, "Etch-a-Sketch v0.1")
-    myscreen.addstr(1, 0, "Use w, a, s, and d to move the cursor. c clears the board")
+    myscreen.addstr(0, 0, "Etch-a-Sketch v0.2")
+    myscreen.addstr(1, 0, "Use w, a, s, and d to move the cursor. c to clear, r to reset, q to quit")
     for i in range(0, x_grid):
         myscreen.addstr(3, (i*2) + 2, str(i))
     for j in range(0, y_grid):
@@ -54,10 +55,18 @@ def reset_board():
     myscreen.addstr('X')
     myscreen.refresh()
 
+def clear_board():
+    for k in range(0, y_grid):
+        myscreen.move(k+4, 2)
+        myscreen.clrtoeol()
+    myscreen.move(cur_y + 4, cur_x + 2)
+    myscreen.addstr('X')
+    myscreen.refresh()
+
 reset_board()
 
 x = 0
-while x != ord('c'):
+while x != ord('q'):
     x = myscreen.getch()
 
     if x == ord('w'):
@@ -68,6 +77,10 @@ while x != ord('c'):
         move_cursor(1, 0)
     if x == ord('d'):
         move_cursor(0, 1)
+    if x == ord('c'):
+        clear_board()
+    if x == ord('r'):
+        reset_board()
 
 curses.nocbreak()
 curses.echo()
