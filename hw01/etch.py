@@ -40,10 +40,27 @@ def move_cursor(dy, dx):
     myscreen.addstr('X')
     myscreen.refresh()
 
+def size_prompt():
+    # Prompts user for game board size.
+    global y_grid
+    global x_grid
+
+    curses.echo()
+    myscreen.clear()
+    myscreen.border(0)
+    myscreen.addstr(0, 0, "Etch-a-Sketch v0.2")
+    myscreen.addstr(4, 1, "Please enter the Y grid size: ")
+    myscreen.refresh()
+    y_grid = int(chr(myscreen.getch()))
+    myscreen.addstr(5, 1, "Please enter the X grid size: ")
+    myscreen.refresh()
+    x_grid = int(chr(myscreen.getch()))
+    curses.noecho()
+
 def reset_board():
     # Resets board to the initial start conditions.
+    size_prompt()
     myscreen.clear()
-
     myscreen.border(0)
     myscreen.addstr(0, 0, "Etch-a-Sketch v0.2")
     myscreen.addstr(1, 0, "Use w, a, s, and d to move the cursor. c to clear, r to reset, q to quit")
