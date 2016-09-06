@@ -51,15 +51,16 @@ def size_prompt():
     myscreen.addstr(0, 0, "Etch-a-Sketch v0.2")
     myscreen.addstr(4, 1, "Please enter the Y grid size: ")
     myscreen.refresh()
-    y_grid = int(chr(myscreen.getch()))
+    y_grid = int(myscreen.getstr())
     myscreen.addstr(5, 1, "Please enter the X grid size: ")
     myscreen.refresh()
-    x_grid = int(chr(myscreen.getch()))
+    x_grid = int(myscreen.getstr())
     curses.noecho()
 
 def reset_board():
     # Resets board to the initial start conditions.
     size_prompt()
+
     myscreen.clear()
     myscreen.border(0)
     myscreen.addstr(0, 0, "Etch-a-Sketch v0.2")
