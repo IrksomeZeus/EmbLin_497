@@ -5,6 +5,7 @@
 
 import curses
 
+# initializes the window
 myscreen = curses.initscr()
 curses.noecho()
 curses.cbreak()
@@ -74,6 +75,7 @@ def reset_board():
     myscreen.refresh()
 
 def clear_board():
+    # clears the board while keeping the cursor in the same place
     for k in range(0, y_grid):
         myscreen.move(k+4, 3)
         myscreen.clrtoeol()
@@ -100,6 +102,7 @@ while x != ord('q'):
     if x == ord('r'):
         reset_board()
 
+# restore terminal settings and exit
 curses.nocbreak()
 curses.echo()
 curses.endwin()
