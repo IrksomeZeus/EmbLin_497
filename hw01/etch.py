@@ -21,7 +21,7 @@ def cursor_home():
     # Does not refresh.
     global cur_x
     global cur_y
-    myscreen.move(4,2)
+    myscreen.move(4,3)
     cur_y = 0
     cur_x = 0
 
@@ -34,7 +34,7 @@ def move_cursor(dy, dx):
         return
     if (cur_x + dx >= (x_grid*2)) or (cur_x + dx < 0):
         return
-    myscreen.move(cur_y + dy + 4, cur_x + dx + 2)
+    myscreen.move(cur_y + dy + 4, cur_x + dx + 3)
     cur_x = cur_x + dx
     cur_y = cur_y + dy
     myscreen.addstr('X')
@@ -63,10 +63,10 @@ def reset_board():
 
     myscreen.clear()
     myscreen.border(0)
-    myscreen.addstr(0, 0, "Etch-a-Sketch v0.2")
+    myscreen.addstr(0, 0, "Etch-a-Sketch v1.0")
     myscreen.addstr(1, 0, "Use w, a, s, and d to move the cursor. c to clear, r to reset, q to quit")
     for i in range(0, x_grid):
-        myscreen.addstr(3, (i*2) + 2, str(i))
+        myscreen.addstr(3, (i*2) + 3, str(i))
     for j in range(0, y_grid):
         myscreen.addstr(j + 4, 1, str(j))
     cursor_home()
@@ -75,9 +75,9 @@ def reset_board():
 
 def clear_board():
     for k in range(0, y_grid):
-        myscreen.move(k+4, 2)
+        myscreen.move(k+4, 3)
         myscreen.clrtoeol()
-    myscreen.move(cur_y + 4, cur_x + 2)
+    myscreen.move(cur_y + 4, cur_x + 3)
     myscreen.addstr('X')
     myscreen.refresh()
 
