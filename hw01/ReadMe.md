@@ -10,3 +10,9 @@
 4. Install Git on the Host
 5. Sign-up for the two Google groups
 6. Write a simple Etch-a-Sketch program
+
+==========
+Comments by Prof. Yoder
+Well done.
+
+Grade:  10/10
