@@ -4,10 +4,10 @@
 
 | Pin | Direction |
 |:---:|:---------:|
-|P9_11|Left|
-|P9_13|UP|
-|P9_15|Right|
-|P9_17|Down|
-|P9_18|Clear|
+|P9_11|Left       |
+|P9_13|Up         |
+|P9_15|Right      |
+|P9_17|Down       |
+|P9_18|Clear      |
 
 *Dimension entering and exiting the program must still be done with the keyboard*
