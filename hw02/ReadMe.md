@@ -11,3 +11,11 @@
 |P9_18|Clear      |
 
 *Dimension entering and exiting the program must still be done with the keyboard*
+
+==========
+Comments by Prof. Yoder
+
+Looks good.  Thanks for getting it going
+-1 late
+
+Grade:  9/10
