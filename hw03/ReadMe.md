@@ -3,8 +3,8 @@
 ## readTemps.py
 
 Initially displays a readout from three temp sensors
-  *TMP101 Sensors connected to I2C ports 0x48 and 0x49
-  *TMP600 Sensor connected to port 0x4200
+  * TMP101 Sensors connected to I2C ports 0x48 and 0x49
+  * TMP600 Sensor connected to port 0x4200
 
 Then allows prompts the user to heat up or cool down the sensor with the address
 0x48 in order to enable it's high and low temp alerts.
