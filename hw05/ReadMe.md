@@ -14,3 +14,8 @@
 * a_BBB.out is the file cross-compiled for the BBB
 
 ### Pushing to the Cloud
+* tmp101.js is a script to read the temperatures from the three temp sensors and then report them to phant
+* plotTMP101.html contains the code to plot the data recorded
+* keys_tmp101.json contains the key data for the stream
+
+* *Temperature difference between Sensor 2 and the others is most likely because it is located closest to the heat exhaust from my laptop.*
