@@ -1,0 +1,14 @@
+Running on host:
+
+Hello, World! Main is executing at 0x400596
+This address (0x7ffc310f9a90) is in our stack frame
+This address (0x601048) is in our bss section
+This address (0x601040) is in our data section
+
+
+Running on BBB:
+
+Hello, World! Main is executing at 0x103d5
+This address (0xbed30c94) is in our stack frame
+This address (0x20668) is in our bss section
+This address (0x20660) is in our data section
