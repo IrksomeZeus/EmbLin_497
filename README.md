@@ -20,6 +20,6 @@ Repository for my projects in ECE497 Embedded 32bit Linux
 |   P9   |  15 |      | RIGHT_BTN |  RIGHT_BTN |      |      |      |      |              |
 |   P9   |  17 |      |  DOWN_BTN |  DOWN_BTN  |      |      |      |      |              |
 |   P9   |  18 |      | CLEAR_BTN |  CLEAR_BTN |      |      |      |      |              |
-|   P9   |  20 |      |           |     SDA    |      |      |      |      |              |
-|   P9   |  19 |      |           |     SCL    |      |      |      |      |              |
+|   P9   |  20 |      |           |     SDA    |      |  SDA |      |      |              |
+|   P9   |  19 |      |           |     SCL    |      |  SCL |      |      |              |
 |   P9   |  21 |      |           | TEMP ALERT |      |      |      |      |              |
