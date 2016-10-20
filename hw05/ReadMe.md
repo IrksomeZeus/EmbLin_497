@@ -9,5 +9,6 @@
 * Kernel version on BBB after install: uname_r=4.4.25-bone14
 
 ### Cross-Compiling
+* Contains unchanged helloworld.c
 
 ### Pushing to the Cloud
