@@ -44,8 +44,8 @@ def init():
 
 def rotate(direction):
     global currentState
-    global curDirecton
-    curDirecton = direction
+    global curDirection
+    curDirection = direction
     currentState += direction
     if currentState >= len(states):
         currentState = 0
