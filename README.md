@@ -12,14 +12,18 @@ Repository for my projects in ECE497 Embedded 32bit Linux
 
 ## Pins Used
 
-| Header | Pin | hw01 |    hw02   |    hw03    | hw04 | hw05 | hw06 | hw07 |     Other    |
-|:------:|:---:|:----:|:---------:|:----------:|:----:|:----:|:----:|:----:|:------------:|
-|   P9   |  11 |      |  LEFT_BTN |  LEFT_BTN  |      |      |      |      |              |
-|   P9   |  12 |      |           |            |      |      |      |      | External LED |
-|   P9   |  13 |      |   UP_BTN  |   UP_BTN   |      |      |      |      |              |
-|   P9   |  15 |      | RIGHT_BTN |  RIGHT_BTN |      |      |      |      |              |
-|   P9   |  17 |      |  DOWN_BTN |  DOWN_BTN  |      |      |      |      |              |
-|   P9   |  18 |      | CLEAR_BTN |  CLEAR_BTN |      |      |      |      |              |
-|   P9   |  20 |      |           |     SDA    |      |  SDA |      |      |              |
-|   P9   |  19 |      |           |     SCL    |      |  SCL |      |      |              |
-|   P9   |  21 |      |           | TEMP ALERT |      |      |      |      |              |
+| Header | Pin | hw01 |    hw02   |    hw03    | hw04 | hw05 | hw06    | hw07 |     Other    |
+|:------:|:---:|:----:|:---------:|:----------:|:----:|:----:|:-------:|:----:|:------------:|
+|   P9   |  11 |      |  LEFT_BTN |  LEFT_BTN  |      |      |         |      |              |
+|   P9   |  12 |      |           |            |      |      |         |      | External LED |
+|   P9   |  13 |      |   UP_BTN  |   UP_BTN   |      |      |         |      |              |
+|   P9   |  15 |      | RIGHT_BTN |  RIGHT_BTN |      |      |         |      |              |
+|   P9   |  17 |      |  DOWN_BTN |  DOWN_BTN  |      |      |         |      |              |
+|   P9   |  18 |      | CLEAR_BTN |  CLEAR_BTN |      |      |Start BTN|      |              |
+|   P9   |  20 |      |           |     SDA    |      |  SDA |         |      |              |
+|   P9   |  19 |      |           |     SCL    |      |  SCL |         |      |              |
+|   P9   |  21 |      |           | TEMP ALERT |      |      |         |      |              |
+|   P9   |  22 |      |           |            |      |      |  IN_1   |      |              |
+|   P9   |  24 |      |           |            |      |      |  IN_2   |      |              |
+|   P9   |  26 |      |           |            |      |      |  IN_3   |      |              |
+|   P9   |  28 |      |           |            |      |      |  IN_4   |      |              |
