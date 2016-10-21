@@ -25,8 +25,14 @@ CCW = -1
 
 def main():
     init()
+
+    print "Push Start Button..."
+    while GPIO.input(startBtn):
+        pass
+    print "Rotating.."
     rotateRevs()
     rotateRevs(CCW)
+    print "Done."
 
 
 def init():
@@ -58,15 +64,9 @@ def goToState(state):
     for i, port in enumerate(controller):
         GPIO.output(port, state[i])
     steps += curDirection
-    print steps
-    print curDirection
 
 def rotateRevs(direction=CW, revs=1):
     end = steps + revs * outputRevSteps * direction
-    print steps
-    print revs
-    print end
-    print direction
     while end != steps:
         rotate(direction)
         sleep(delay)
