@@ -4,8 +4,12 @@
 # Austin Yates  Oct. 20, 2016
 
 import Adafruit_BBIO.GPIO as GPIO
+import Adafruit_BBIO.ADC as ADC
+import numpy as n
 from time import sleep
 
+photo_left = 'AIN0'
+photo_right = 'AIN1'
 startBtn = 'P9_18'
 controller = ['P9_22', 'P9_24', 'P9_26', 'P9_28']
 
@@ -26,19 +30,19 @@ CCW = -1
 def main():
     init()
 
-    print "Push Start Button..."
+    print "Waiting for Start Button..."
     while GPIO.input(startBtn):
         pass
-    print "Rotating.."
-    rotateRevs()
-    rotateRevs(CCW)
-    print "Done."
-
+    print "Searching..."
+    location = search()
+    rotate(CCW, outputRevSteps - location) # rotates CCW to brightest point
 
 def init():
     global currentState
     global steps
     global curDirection
+    # Setup ADC
+    ADC.setup()
     # Setup GPIO
     GPIO.setup(startBtn, GPIO.IN)
     for port in controller:
@@ -48,16 +52,20 @@ def init():
     curDirection = CW
     goToState(states[0])
 
-def rotate(direction):
+def rotate(direction, ticks=None):
     global currentState
     global curDirection
     curDirection = direction
-    currentState += direction
-    if currentState >= len(states):
-        currentState = 0
-    elif currentState < 0:
-        currentState = len(states) - 1
-    goToState(states[currentState])
+    if ticks is None:
+        currentState += direction
+        if currentState >= len(states):
+            currentState = 0
+        elif currentState < 0:
+            currentState = len(states) - 1
+        goToState(states[currentState])
+    else:
+        for x in xrange(ticks):
+            rotate(direction)
 
 def goToState(state):
     global steps
@@ -70,6 +78,18 @@ def rotateRevs(direction=CW, revs=1):
     while end != steps:
         rotate(direction)
         sleep(delay)
+
+def search():
+    values = []
+    end = steps + outputRevSteps
+    while end != steps:
+
+        # add value to list
+
+        rotate(CW)
+        sleep(delay)
+
+    return n.argmin(values) #returns the index of the minimum value
 
 
 if __name__ == '__main__':
